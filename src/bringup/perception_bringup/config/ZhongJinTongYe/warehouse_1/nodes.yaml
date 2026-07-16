@@ -1,7 +1,8 @@
 drivers:
   seyond:
-    enable: true
-    config: config_3.yaml
+    - enable: true
+      config: config_3.yaml
+      name: seyond
 
 warehouse:
   cloud_grid:
