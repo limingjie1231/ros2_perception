@@ -1,0 +1,18 @@
+services:
+  ros2_perception:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ros2-perception-dev:latest
+    container_name: ros2_perception_dev
+    network_mode: host
+    volumes:
+      - .:/workspace/ros2_perception
+      - ./log:/root/.ros/log
+      - ./pcd:/workspace/pcd
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY:-}
+    stdin_open: true
+    tty: true
+    command: /bin/bash

@@ -1,0 +1,19 @@
+common:
+  log_level: info                                     #Log level: info, warn, error
+lidars:
+  - lidar:
+      frame_topic: /seyond/lidar_10_35_0_150                       #Frame topic
+
+      lidar_name: seyond_150                              #Lidar name
+      lidar_ip: 10.35.0.150                          #Lidar ip
+      port: 8010                                      #Lidar port
+      udp_port: 8015                                  #Udp port, if < 0, use tcp
+      receive_mode: 1
+  - lidar:
+      frame_topic: /seyond/lidar_10_35_0_151                       #Frame topic
+
+      lidar_name: seyond_151                              #Lidar name
+      lidar_ip: 10.35.0.151                              #Lidar ip
+      port: 8010                                      #Lidar port
+      udp_port: 8016                                 #Udp port, if < 0, use tcp
+      receive_mode: 1

@@ -1,0 +1,11 @@
+std_msgs/Header header
+int32 crane_id
+int32 task_type
+int32 task_scene
+geometry_msgs/Point target_pos
+geometry_msgs/Point crane_pos
+geometry_msgs/Vector3 crane_velocity
+bool update_picking_points
+int32 update_area_shape
+geometry_msgs/Point[4] picking_area_bounds
+int32 heartbeat_seq

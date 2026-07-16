@@ -1,0 +1,14 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+  <!-- declare arguments with default values -->
+  <!-- the path of config file -->
+  <arg name="PROJECT_NAME"    default="ZhongJinTongYe" />
+  
+  <arg name="config_path" default="$(find seyond)/config/$(arg PROJECT_NAME)/config_1.yaml" />
+
+
+  <node pkg="seyond" name="seyond_2" type="seyond_node" output="screen" required="false" respawn="true"> 
+    <param name="config_path" value="$(arg config_path)"/>
+  </node>
+</launch>

@@ -1,0 +1,2 @@
+/home/wattman/wattman/perception_system_of_automatic_crane/src/driver/seyond_sw_ros/src/seyond_lidar_ros/src/inno_sdk/apps/example/demo
+/home/wattman/wattman/perception_system_of_automatic_crane/src/driver/seyond_sw_ros/src/seyond_lidar_ros/src/inno_sdk/apps/example/sphere2xyz

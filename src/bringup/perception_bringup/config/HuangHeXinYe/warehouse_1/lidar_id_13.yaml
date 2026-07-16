@@ -1,0 +1,20 @@
+lidar_id: 13
+topic_lidar_cloud: /livox/lidar_192_168_41_140
+topic_lidar_transform: surface_clouds_lidar_
+crane_id: 0
+warehouse_id: 1
+fixed_lidar_flag: 1
+fixed_lidar_x: 100.0
+scan_min:
+  x: -10.0
+  y: -5.0
+  z: -10.0
+scan_max:
+  x: 10.0
+  y: 5.0
+  z: 10.0
+trans:
+  [1.0, 0.0, 0.0, 0.0,
+   0.0, 1.0, 0.0, 0.0,
+   0.0, 0.0, 1.0, 0.0,
+   0.0, 0.0, 0.0, 1.0]

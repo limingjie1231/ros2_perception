@@ -1,0 +1,17 @@
+Performing C++ SOURCE FILE Test HAS_MACRO_PREFIX_MAP_GCCXX failed with the following output:
+Change Dir: /home/wattman/wattman/perception_system_of_automatic_crane/src/driver/seyond_sw_ros/src/seyond_lidar_ros/src/inno_sdk/build_unix/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e14de/fast && /usr/bin/make  -f CMakeFiles/cmTC_e14de.dir/build.make CMakeFiles/cmTC_e14de.dir/build
+make[1]: Entering directory '/home/wattman/wattman/perception_system_of_automatic_crane/src/driver/seyond_sw_ros/src/seyond_lidar_ros/src/inno_sdk/build_unix/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e14de.dir/src.cxx.o
+/usr/bin/c++ -DHAS_MACRO_PREFIX_MAP_GCCXX  -std=gnu++11 -fPIC    -fmacro-prefix-map -o CMakeFiles/cmTC_e14de.dir/src.cxx.o -c /home/wattman/wattman/perception_system_of_automatic_crane/src/driver/seyond_sw_ros/src/seyond_lidar_ros/src/inno_sdk/build_unix/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-fmacro-prefix-map'; did you mean '-fdebug-prefix-map='?
+CMakeFiles/cmTC_e14de.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_e14de.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_e14de.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/wattman/wattman/perception_system_of_automatic_crane/src/driver/seyond_sw_ros/src/seyond_lidar_ros/src/inno_sdk/build_unix/CMakeFiles/CMakeTmp'
+Makefile:127: recipe for target 'cmTC_e14de/fast' failed
+make: *** [cmTC_e14de/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }

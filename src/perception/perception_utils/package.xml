@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>perception_utils</name>
+  <version>0.1.0</version>
+  <description>Common utilities: types, gridmap, config parser, math</description>
+  <maintainer email="wattman@example.com">wattman</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>perception_interfaces</depend>
+  <depend>pcl</depend>
+  <depend>eigen</depend>
+  <depend>yaml-cpp</depend>
+  <depend>libopencv-dev</depend>
+</package>

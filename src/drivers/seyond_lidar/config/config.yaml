@@ -1,0 +1,9 @@
+common:
+  log_level: info
+lidars:
+  - lidar:
+      frame_topic: /seyond/iv_points
+      lidar_name: seyond
+      lidar_ip: 172.168.1.10
+      port: 8010
+      udp_port: 8010

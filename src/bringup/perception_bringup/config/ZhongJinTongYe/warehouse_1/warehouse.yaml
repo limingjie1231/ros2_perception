@@ -1,0 +1,18 @@
+warehouse_id: 1
+resolution_x: 0.3
+resolution_y: 0.3
+sparse_resolution_x: 0.6
+sparse_resolution_y: 0.6
+workspace_min_pt:
+  x: -50.0
+  y: -50.0
+  z: 0.0
+workspace_max_pt:
+  x: 150.0
+  y: 50.0
+  z: 10.0
+crane_id_list: [1]
+fixed_lidar_sn_list: []
+lidar_topics:
+  - /warehouse_1/crane_1/lidar_1/surface_clouds_lidar_1
+  - /warehouse_1/crane_1/lidar_2/surface_clouds_lidar_2
