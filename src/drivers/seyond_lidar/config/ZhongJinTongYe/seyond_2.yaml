@@ -1,0 +1,17 @@
+common:
+  log_level: info
+lidars:
+  - lidar:
+      frame_topic: /seyond/lidar_10_36_0_83
+      lidar_name: seyond_83
+      lidar_ip: 10.36.0.83
+      port: 8010
+      udp_port: 8013
+      receive_mode: 1
+  - lidar:
+      frame_topic: /seyond/lidar_10_36_0_84
+      lidar_name: seyond_84
+      lidar_ip: 10.36.0.84
+      port: 8010
+      udp_port: 8014
+      receive_mode: 1

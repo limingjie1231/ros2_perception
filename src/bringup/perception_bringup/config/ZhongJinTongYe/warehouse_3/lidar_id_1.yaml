@@ -1,0 +1,20 @@
+lidar_id: 1
+topic_lidar_cloud: /seyond/lidar_10_36_0_58
+topic_lidar_transform: surface_clouds_lidar_
+crane_id: 1
+warehouse_id: 3
+fixed_lidar_flag: 0
+fixed_lidar_x: 0.0
+scan_min:
+  x: -20.0
+  y: 1.8
+  z: -7.0
+scan_max:
+  x: 20.0
+  y: 21.5
+  z: 9.0
+trans:
+  [-0.178016, -0.938764, 0.295013, -2.205142,
+    0.651822,  0.112101, 0.750040,  4.873280,
+   -0.737183,  0.325814, 0.591952, 12.560264,
+    0.000000,  0.000000, 0.000000,  1.000000]

@@ -22,7 +22,7 @@ def generate_launch_description():
             parameters=[{
                 "config_path": os.path.join(seyond_share, "config",
                                             "ZhongJinTongYe",
-                                            "config_2.yaml")
+                                            "seyond_2.yaml")
             }],
             output="screen",
         ),

@@ -1,10 +1,10 @@
 drivers:
   seyond:
     - enable: true
-      config: config_3.yaml
-      name: seyond_3
+      config: seyond_1.yaml
+      name: seyond_1
     - enable: true
-      config: config_2.yaml
+      config: seyond_2.yaml
       name: seyond_2
 
 warehouse:
@@ -19,29 +19,29 @@ warehouse:
   las_exporter:
     enable: true
 
-cranes: [0, 1, 2, 3]
+cranes: [0, 1, 2]
 
 lidar_crane_map:
+  1: 1
+  2: 1
   3: 2
   4: 2
-  5: 3
-  6: 3
+  5: 0
+  6: 0
+  7: 0
 
 crane_nodes:
   0:
     ws_bridge:
       enable: true
   1:
-    ws_bridge:
-      enable: true
-  2:
     picking_area:
       enable: true
     height_service:
       enable: true
     ws_bridge:
       enable: true
-  3:
+  2:
     picking_area:
       enable: true
     height_service:
