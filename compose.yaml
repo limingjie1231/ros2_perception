@@ -1,9 +1,6 @@
 services:
   ros2_perception:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: ros2-perception-dev:latest
+    image: 8.148.146.171:5000/ros2-perception-dev:20260716
     container_name: ros2_perception_dev
     network_mode: host
     volumes:
