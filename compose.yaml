@@ -3,6 +3,7 @@ services:
     image: 8.148.146.171:5000/ros2-perception-dev:20260716
     container_name: ros2_perception_dev
     network_mode: host
+    ipc: host
     volumes:
       - .:/workspace/ros2_perception
       - ./log:/root/.ros/log
@@ -10,6 +11,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
       - DISPLAY=${DISPLAY:-}
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/workspace/ros2_perception/fastrtps.xml
     stdin_open: true
     tty: true
     command: /bin/bash
