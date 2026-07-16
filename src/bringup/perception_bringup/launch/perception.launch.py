@@ -26,18 +26,22 @@ def launch_setup(context, *args, **kwargs):
 
     # ---- Drivers ----
     drivers = nodes_yaml.get("drivers", {})
-    if drivers.get("seyond", {}).get("enable", False):
-        cfg_name = drivers["seyond"].get("config", "config.yaml")
-        seyond_share = get_package_share_directory("seyond")
-        seyond_config = os.path.join(seyond_share, "config",
-                                     "ZhongJinTongYe", cfg_name)
-        actions.append(Node(
-            package="seyond",
-            executable="seyond_node",
-            name="seyond",
-            parameters=[{"config_path": seyond_config}],
-            output="screen",
-        ))
+    seyond_list = drivers.get("seyond", [])
+    if isinstance(seyond_list, dict):
+        seyond_list = [seyond_list]
+    for seyond_cfg in seyond_list:
+        if seyond_cfg.get("enable", False):
+            cfg_name = seyond_cfg.get("config", "config.yaml")
+            seyond_share = get_package_share_directory("seyond")
+            seyond_config = os.path.join(seyond_share, "config",
+                                         "ZhongJinTongYe", cfg_name)
+            actions.append(Node(
+                package="seyond",
+                executable="seyond_node",
+                name=seyond_cfg.get("name", "seyond"),
+                parameters=[{"config_path": seyond_config}],
+                output="screen",
+            ))
 
     # ---- Warehouse-level nodes ----
     warehouse_nodes = nodes_yaml.get("warehouse", {})

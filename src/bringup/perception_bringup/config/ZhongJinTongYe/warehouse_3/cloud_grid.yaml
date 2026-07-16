@@ -14,5 +14,7 @@ workspace_max_pt:
 crane_id_list: [0, 1, 2, 3]
 fixed_lidar_sn_list: []
 lidar_topics:
+  - /warehouse_3/crane_2/lidar_3/surface_clouds_lidar_3
+  - /warehouse_3/crane_2/lidar_4/surface_clouds_lidar_4
   - /warehouse_3/crane_3/lidar_5/surface_clouds_lidar_5
   - /warehouse_3/crane_3/lidar_6/surface_clouds_lidar_6

@@ -1,7 +1,11 @@
 drivers:
   seyond:
-    enable: true
-    config: config_3.yaml
+    - enable: true
+      config: config_3.yaml
+      name: seyond_3
+    - enable: true
+      config: config_2.yaml
+      name: seyond_2
 
 warehouse:
   cloud_grid:
@@ -18,6 +22,8 @@ warehouse:
 cranes: [0, 1, 2, 3]
 
 lidar_crane_map:
+  3: 2
+  4: 2
   5: 3
   6: 3
 
@@ -29,6 +35,10 @@ crane_nodes:
     ws_bridge:
       enable: true
   2:
+    picking_area:
+      enable: true
+    height_service:
+      enable: true
     ws_bridge:
       enable: true
   3:
