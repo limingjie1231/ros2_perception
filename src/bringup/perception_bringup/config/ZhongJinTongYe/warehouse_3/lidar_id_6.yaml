@@ -1,0 +1,20 @@
+lidar_id: 6
+topic_lidar_cloud: /livox/lidar_10_36_0_38
+topic_lidar_transform: surface_clouds_lidar_
+crane_id: 0
+warehouse_id: 3
+fixed_lidar_flag: 1
+fixed_lidar_x: 0.0
+scan_min:
+  x: -20.0
+  y: 1.8
+  z: -7.0
+scan_max:
+  x: 20.0
+  y: 21.5
+  z: 9.0
+trans:
+  [ 0.211114,  0.943220, -0.256452,  2.702333,
+   -0.664877, -0.053748, -0.745016, 20.539146,
+   -0.716498,  0.327792,  0.615779, 12.155942,
+    0.000000,  0.000000,  0.000000,  1.000000]
