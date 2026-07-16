@@ -1,0 +1,15 @@
+warehouse_id: 3
+resolution_x: 0.1
+resolution_y: 0.1
+sparse_resolution_x: 0.5
+sparse_resolution_y: 0.5
+workspace_min_pt:
+  x: 0.0
+  y: 0.0
+  z: -7.0
+workspace_max_pt:
+  x: 260.0
+  y: 25.0
+  z: 9.0
+crane_id_list: [0, 1, 2, 3]
+fixed_lidar_sn_list: []

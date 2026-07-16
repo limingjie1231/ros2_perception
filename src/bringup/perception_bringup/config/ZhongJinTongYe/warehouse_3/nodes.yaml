@@ -1,0 +1,40 @@
+drivers:
+  seyond:
+    enable: true
+    config: config_3.yaml
+
+warehouse:
+  cloud_grid:
+    enable: true
+  vol_cal:
+    enable: true
+  feeding_vol_cal:
+    enable: true
+  device_status:
+    enable: true
+  las_exporter:
+    enable: true
+
+cranes: [0, 1, 2, 3]
+
+lidar_crane_map:
+  5: 3
+  6: 3
+
+crane_nodes:
+  0:
+    ws_bridge:
+      enable: true
+  1:
+    ws_bridge:
+      enable: true
+  2:
+    ws_bridge:
+      enable: true
+  3:
+    picking_area:
+      enable: true
+    height_service:
+      enable: true
+    ws_bridge:
+      enable: true

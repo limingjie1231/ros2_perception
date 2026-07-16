@@ -1,0 +1,9 @@
+grid_resolution_x: 0.3
+grid_resolution_y: 0.3
+min_pick_point_height: -7.0
+max_pick_point_height: 7.0
+min_point_num_for_base_grid: 4
+max_base_grid_delta_height: 0.8
+height_tolerance: 0.5
+publish_pick_point_num: 3
+sparse_distance: 0.6
