@@ -18,7 +18,7 @@ set(INNO_SDK_PATH src/inno_sdk/)
 #-------------------------------------
 # Point Type (PointXYZI, PointXYZIT)
 #-------------------------------------
-set(POINT_TYPE PointXYZIT)
+set(POINT_TYPE PointXYZI)
 
 if(${POINT_TYPE} STREQUAL "PointXYZI")
   add_definitions(-DENABLE_XYZI)
