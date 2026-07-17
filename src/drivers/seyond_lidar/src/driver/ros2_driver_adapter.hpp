@@ -51,7 +51,10 @@ class ROSAdapter {
   void init() {
     rclcpp::QoS qos(rclcpp::KeepLast(10));
     qos.reliable();
-    inno_frame_pub_ = node_ptr_->create_publisher<sensor_msgs::msg::PointCloud2>(lidar_config_.frame_topic, qos);
+    rclcpp::PublisherOptions pub_opts;
+    pub_opts.use_intra_process_comm = rclcpp::IntraProcessSetting::Enable;
+    inno_frame_pub_ = node_ptr_->create_publisher<sensor_msgs::msg::PointCloud2>(
+        lidar_config_.frame_topic, qos, pub_opts);
     driver_ptr_->register_publish_frame_callback(
         std::bind(&ROSAdapter::publishFrame, this, std::placeholders::_1, std::placeholders::_2));
 
@@ -385,6 +388,8 @@ class ROSNode {
   void spin() {
     rclcpp::spin(this->node_ptr_);
   }
+
+  std::shared_ptr<rclcpp::Node> get_node() { return node_ptr_; }
 
   static void rosLogCallback(int32_t level, const char* header2, const char* msg) {
     switch (level) {

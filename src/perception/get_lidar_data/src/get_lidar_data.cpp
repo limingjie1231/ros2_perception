@@ -35,9 +35,13 @@ LidarDataSub::LidarDataSub(const rclcpp::NodeOptions& options)
   rclcpp::QoS qos(rclcpp::KeepLast(10));
   qos.reliable();
 
+  rclcpp::SubscriptionOptions sub_opts;
+  sub_opts.use_intra_process_comm = rclcpp::IntraProcessSetting::Enable;
+
   sub_ = create_subscription<sensor_msgs::msg::PointCloud2>(
       config_.topic_cloud, qos,
-      std::bind(&LidarDataSub::cloudCallback, this, std::placeholders::_1));
+      std::bind(&LidarDataSub::cloudCallback, this, std::placeholders::_1),
+      sub_opts);
 
   pub_ = create_publisher<sensor_msgs::msg::PointCloud2>(
       config_.topic_transform + std::to_string(config_.lidar_id), qos);
