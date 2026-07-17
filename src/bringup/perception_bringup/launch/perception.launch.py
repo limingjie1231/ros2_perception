@@ -97,6 +97,7 @@ def launch_setup(context, *args, **kwargs):
 def generate_launch_description():
     return LaunchDescription([
         SetEnvironmentVariable("ROS_VERSION", "2"),
+        SetEnvironmentVariable("RMW_IMPLEMENTATION", "rmw_cyclonedds_cpp"),
         DeclareLaunchArgument("project", default_value="ZhongJinTongYe",
                               description="Project/site name"),
         DeclareLaunchArgument("warehouse_id", default_value="1",

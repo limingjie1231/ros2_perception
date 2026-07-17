@@ -13,6 +13,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         SetEnvironmentVariable("ROS_VERSION", "2"),
+        SetEnvironmentVariable("RMW_IMPLEMENTATION", "rmw_cyclonedds_cpp"),
 
         # seyond 驱动（10.35.0.116:8013 + 10.35.0.117:8014）
         Node(
