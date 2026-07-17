@@ -17,22 +17,28 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_eigen REQUIRED)
 find_package(PCL REQUIRED COMPONENTS common filters)
 find_package(pcl_conversions REQUIRED)
+find_package(rclcpp_components REQUIRED)
 
-add_executable(get_lidar_data_node src/get_lidar_data_node.cpp src/get_lidar_data.cpp)
-target_include_directories(get_lidar_data_node PUBLIC
+add_library(get_lidar_data_component SHARED src/get_lidar_data.cpp src/get_lidar_data_node.cpp)
+target_include_directories(get_lidar_data_component PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
   ${PCL_INCLUDE_DIRS}
 )
-target_compile_definitions(get_lidar_data_node PUBLIC ${PCL_DEFINITIONS})
+target_compile_definitions(get_lidar_data_component PUBLIC ${PCL_DEFINITIONS})
 
-ament_target_dependencies(get_lidar_data_node
-  rclcpp sensor_msgs perception_interfaces tf2_ros tf2_eigen pcl_conversions
+ament_target_dependencies(get_lidar_data_component
+  rclcpp sensor_msgs perception_interfaces tf2_ros tf2_eigen pcl_conversions rclcpp_components
 )
 
-target_link_libraries(get_lidar_data_node
+target_link_libraries(get_lidar_data_component
   ${PCL_LIBRARIES}
   perception_utils::perception_utils
+)
+
+rclcpp_components_register_node(get_lidar_data_component
+  PLUGIN "LidarDataSub"
+  EXECUTABLE get_lidar_data_node
 )
 
 install(DIRECTORY include/ DESTINATION include/${PROJECT_NAME})

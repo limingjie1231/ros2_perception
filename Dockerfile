@@ -7,6 +7,7 @@ RUN apt update && apt install -y --no-install-recommends \
     libyaml-cpp-dev ros-humble-pcl-ros \
     ros-humble-tf2-eigen python3-pip \
     ros-humble-rmw-cyclonedds-cpp \
+    ros-humble-rclcpp-components \
     vim htop less && \
     rm -rf /var/lib/apt/lists/* && \
     pip3 install pyyaml

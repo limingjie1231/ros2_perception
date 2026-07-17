@@ -16,22 +16,28 @@ find_package(perception_interfaces REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(PCL REQUIRED COMPONENTS common filters io)
 find_package(pcl_conversions REQUIRED)
+find_package(rclcpp_components REQUIRED)
 
-add_executable(cloud_grid_node src/cloud_grid_node.cpp src/cloud_grid.cpp)
-target_include_directories(cloud_grid_node PUBLIC
+add_library(cloud_grid_component SHARED src/cloud_grid.cpp src/cloud_grid_node.cpp)
+target_include_directories(cloud_grid_component PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
   ${PCL_INCLUDE_DIRS}
 )
-target_compile_definitions(cloud_grid_node PUBLIC ${PCL_DEFINITIONS})
+target_compile_definitions(cloud_grid_component PUBLIC ${PCL_DEFINITIONS})
 
-ament_target_dependencies(cloud_grid_node
-  rclcpp sensor_msgs perception_interfaces std_msgs pcl_conversions
+ament_target_dependencies(cloud_grid_component
+  rclcpp sensor_msgs perception_interfaces std_msgs pcl_conversions rclcpp_components
 )
 
-target_link_libraries(cloud_grid_node
+target_link_libraries(cloud_grid_component
   ${PCL_LIBRARIES}
   perception_utils::perception_utils
+)
+
+rclcpp_components_register_node(cloud_grid_component
+  PLUGIN "CloudGridNode"
+  EXECUTABLE cloud_grid_node
 )
 
 install(DIRECTORY include/ DESTINATION include/${PROJECT_NAME})
